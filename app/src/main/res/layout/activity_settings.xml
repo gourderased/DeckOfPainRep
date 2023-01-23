@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.Dopr.deckofpainrep.SettingsActivity"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:weightSum="10"
+    android:orientation="vertical"
+    >
+
+    //상단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:weightSum="10"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            ></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="3"
+            android:text="설정"
+            android:textColor="@color/dividing"
+            android:textSize="18dp"
+
+            ></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/dividing"
+            android:layout_weight="0.2"
+            android:layout_marginHorizontal="20dp"
+            ></View>
+    </LinearLayout>
+
+
+    //중단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        // 첫번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="세트 수 설정"
+                android:textColor="@color/dividing"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                ></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                ></View>
+
+            <ImageButton
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/settings_icn_go"
+                android:scaleType="fitCenter"
+                android:background="@color/main"
+                ></ImageButton>
+        </LinearLayout>
+        // 두번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="카드 횟수 설정"
+                android:textColor="@color/dividing"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                ></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                ></View>
+
+            <ImageButton
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/settings_icn_go"
+                android:scaleType="fitCenter"
+                android:background="@color/main"
+
+                ></ImageButton>
+        </LinearLayout>
+        //세번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="운동 종목 설정"
+                android:textColor="@color/dividing"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                ></TextView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                ></View>
+
+            <ImageButton
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/settings_icn_go"
+                android:scaleType="fitCenter"
+                android:background="@color/main"
+
+                ></ImageButton>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/app_version"
+            android:textSize="14dp"
+            android:textColor="#5E5D5D"
+            android:layout_marginLeft="20dp"
+            ></TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
