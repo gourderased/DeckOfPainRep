@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
 import com.example.deckofpainrep.R;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -26,7 +24,9 @@ public class CardActivity extends AppCompatActivity {
     private ImageButton btn_reset;
     private TextView txt_count;
     private TextView txt_totalTime;
+    private TextView txt_end;
 
+    private int flag = 0;
 
     private long backBtnTime = 0; // 뒤로가기
 
@@ -91,7 +91,7 @@ public class CardActivity extends AppCompatActivity {
             R.drawable.card_joker2,
     };
 
-    int cardNum = 10; // 카드 총 개수(조커 유무)
+    int cardNum = 5;
     int[] arr_cardUsed = new int[cardNum]; // 카드 사용여부 확인 배열
     int count = 0; // 세트 진행 횟수
 
@@ -123,6 +123,7 @@ public class CardActivity extends AppCompatActivity {
         txt_count = findViewById(R.id.txt_count);
         txt_count.setText(count + " / " + cardNum);
         txt_totalTime = findViewById(R.id.txt_totalTime);
+        txt_end = findViewById(R.id.txt_end);
 
 
         // 리셋 버튼
@@ -140,10 +141,12 @@ public class CardActivity extends AppCompatActivity {
             arr_cardUsed[i] = 0;
         }
 
+
         //카드 클릭 이벤트
         btn_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if(count < cardNum) {
                     while(true) {
                         int i = random.nextInt(cardNum);
@@ -173,15 +176,23 @@ public class CardActivity extends AppCompatActivity {
                     int min = time/ 60 % 60;
 
 
+                    btn_card.setImageResource(R.drawable.card_end);
 
+                    txt_end.setText("운동 끝!");
+                    if(flag == 0) {
+                        txt_totalTime.setText("총 수행 시간 : " + min + "분 "+ sec + "초");
+                        flag = 1;
+                    }
+                    btn_reset.setImageResource(R.drawable.card_btn_home);
 
-                    btn_card.setVisibility(View.GONE);
-
-
-                    btn_card.setOnClickListener(new View.OnClickListener() {
+                    btn_reset.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(CardActivity.this, CardActivity.class);
+                            Intent intent = new Intent(CardActivity.this, MainActivity.class);
+
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
                             startActivity(intent);
                         }
                     });
@@ -197,11 +208,16 @@ public class CardActivity extends AppCompatActivity {
         long gapTime = curTime - backBtnTime;
 
         if(0 <= gapTime && 2000 >= gapTime) {
-            finishAffinity();
+            Intent intent = new Intent(CardActivity.this, MainActivity.class);
+
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            startActivity(intent);
         }
         else {
             backBtnTime = curTime;
-            mToast.setText("한 번 더 누르면 종료됩니다.");
+            mToast.setText("한 번 더 누르면 메인화면으로 나가집니다.");
             mToast.show();
         }
     }

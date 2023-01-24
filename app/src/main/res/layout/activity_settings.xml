@@ -31,7 +31,7 @@
             android:layout_marginLeft="30dp"
             android:layout_weight="3"
             android:text="설정"
-            android:textColor="@color/dividing"
+            android:textColor="@color/gray"
             android:textSize="18dp"
 
             ></TextView>
@@ -45,7 +45,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/dividing"
+            android:background="@color/gray"
             android:layout_weight="0.2"
             android:layout_marginHorizontal="20dp"
             ></View>
@@ -74,7 +74,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:text="세트 수 설정"
-                android:textColor="@color/dividing"
+                android:textColor="@color/gray"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 ></TextView>
@@ -109,7 +109,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:text="카드 횟수 설정"
-                android:textColor="@color/dividing"
+                android:textColor="@color/gray"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 ></TextView>
@@ -145,7 +145,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:text="운동 종목 설정"
-                android:textColor="@color/dividing"
+                android:textColor="@color/gray"
                 android:gravity="center_vertical"
                 android:textSize="18dp"
                 ></TextView>

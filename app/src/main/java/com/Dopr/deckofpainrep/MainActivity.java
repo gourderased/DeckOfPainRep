@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.deckofpainrep.R;
 
@@ -17,11 +18,17 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_how;
     private Button btn_start;
+
+    private long backBtnTime = 0;
+
+    public static Toast mToast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        mToast = Toast.makeText(this, "null", Toast.LENGTH_LONG);
         // 설정
         btn_settings = findViewById(R.id.btn_settings);
         btn_settings.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +59,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    @Override
+    public void onBackPressed() {
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if(0 <= gapTime && 2000 >= gapTime) {
+            finishAffinity();
+        }
+        else {
+            backBtnTime = curTime;
+            mToast.setText("한 번 더 누르면 종료됩니다.");
+            mToast.show();
+        }
     }
 }
