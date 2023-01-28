@@ -3,7 +3,9 @@ package com.Dopr.deckofpainrep;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,13 +24,18 @@ public class MainActivity extends AppCompatActivity {
     private long backBtnTime = 0;
 
     public static Toast mToast;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //토스트 초기화
         mToast = Toast.makeText(this, "null", Toast.LENGTH_LONG);
+
+
+
         // 설정
         btn_settings = findViewById(R.id.btn_settings);
         btn_settings.setOnClickListener(new View.OnClickListener() {

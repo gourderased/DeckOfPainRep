@@ -13,13 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeckOfPainRep"
         tools:targetApi="31">
-        <activity android:name="com.Dopr.deckofpainrep.SettingsActivity"
-            android:exported="true"/>
         <activity
-            android:name="com.Dopr.deckofpainrep.HowActivity"
+            android:name="com.Dopr.deckofpainrep.SettingsActivity"
             android:exported="false" />
         <activity
+            android:name="com.Dopr.deckofpainrep.SettingsSetActivity"
+            android:exported="true" />
+        <activity
             android:name="com.Dopr.deckofpainrep.CardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.Dopr.deckofpainrep.HowActivity"
             android:exported="false" />
         <activity
             android:name="com.Dopr.deckofpainrep.MainActivity"
@@ -29,9 +33,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

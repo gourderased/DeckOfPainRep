@@ -1,16 +1,46 @@
 package com.Dopr.deckofpainrep;
 
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.deckofpainrep.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    private ImageButton btn_go_set;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        btn_go_set = findViewById(R.id.btn_go_set);
+
+        btn_go_set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this, SettingsSetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+    public void onBackPressed() {
+        Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        startActivity(intent);
+
+
     }
 }
 
