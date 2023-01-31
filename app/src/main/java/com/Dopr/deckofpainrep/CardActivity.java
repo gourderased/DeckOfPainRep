@@ -120,13 +120,14 @@ public class CardActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        //sharedpreference 초기화
+        //sharedPreference 초기화
         SharedPreferenceUtil sharedPreference = new SharedPreferenceUtil(this);
         int setNum = sharedPreference.getSet();
-
-
-
-
+        int aCardCount = sharedPreference.getACardCount();
+        int jCardCount = sharedPreference.getJCardCount();
+        int qCardCount = sharedPreference.getQCardCount();
+        int kCardCount = sharedPreference.getKCardCount();
+        int jokerCardCount = sharedPreference.getJokerCardCount();
 
         //총 시간 계산
         long startTime = System.currentTimeMillis();
@@ -142,10 +143,6 @@ public class CardActivity extends AppCompatActivity {
         txt_totalTime = findViewById(R.id.txt_totalTime);
         txt_end = findViewById(R.id.txt_end);
         txt_info = findViewById(R.id.txt_info);
-
-
-
-
 
        // 리셋 버튼
         btn_reset.setOnClickListener(new View.OnClickListener() {
@@ -186,21 +183,24 @@ public class CardActivity extends AppCompatActivity {
                             // i 가 수인지 a,j,k,q,조커 인지 확인
                             alphaNum = distinguishAlpha(i);
 
-//                            if(alphaNum == 14) { //조커일 경우
-//                                executeNum = jokerCard;
-//                            }
-//                            else if(alphaNum == 13) {
-//                                executeNum = jCard;
-//                            }
-//                            else if(alphaNum == 12) {
-//                                executeNum = qCard;
-//                            }
-//                            else if(alphaNum == 11) {
-//                                executeNum = kCard;
-//                            }
-//                            else {
-//                                executeNum = i + 1;
-//                            }
+                            if(alphaNum == 14) { //조커일 경우
+                                executeNum = jokerCardCount;
+                            }
+                            else if(alphaNum == 13) {
+                                executeNum = jCardCount;
+                            }
+                            else if(alphaNum == 12) {
+                                executeNum = qCardCount;
+                            }
+                            else if(alphaNum == 11) {
+                                executeNum = kCardCount;
+                            }
+                            else if(alphaNum == 10) {
+                                executeNum = aCardCount;
+                            }
+                            else {
+                                executeNum = alphaNum + 2;
+                            }
 //                            // i로 부터 문양 구분
 //                            patternNum = distinguishPattern(i);
 //
@@ -227,7 +227,7 @@ public class CardActivity extends AppCompatActivity {
                     txt_count.setText(count + " / " + setNum);
                     //카드 하단 운동 종류와 횟수 표시
 
-                    txt_info.setText(" " +   "회");
+                    txt_info.setText(executeNum +" 회");
                     
                 }
                 // 카드 다 뽑은 후 총 소요시간 표시 & 카드화면 reset버튼 전환
@@ -291,8 +291,9 @@ public class CardActivity extends AppCompatActivity {
         }
         else {
             i = i % 13;
+            System.out.println(i);
             if (i == 9) return 9; // j
-            else if(i==10) return 10; // q
+            else if(i == 10) return 10; // q
             else if(i == 11) return 11; // k
             else if (i == 12) return 12; // a
             else return i;
@@ -316,6 +317,4 @@ public class CardActivity extends AppCompatActivity {
             return 0;
         }
     }
-
-
 }
