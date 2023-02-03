@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.Dopr.deckofpainrep.SettingsActivity"
 
@@ -30,10 +31,9 @@
             android:layout_height="0dp"
             android:layout_marginLeft="30dp"
             android:layout_weight="3"
-            android:text="설정"
+            android:text="세트 수 설정"
             android:textColor="@color/gray"
             android:textSize="18dp"
-
             ></TextView>
 
         <View
@@ -72,64 +72,54 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:text="세트 수 설정"
-                android:textColor="@color/gray"
-                android:gravity="center_vertical"
-                android:textSize="18dp"
-                ></TextView>
+                android:layout_weight="5"
+                android:text="총 세트 수"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
 
+                ></TextView>
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
-                ></View>
-
-            <ImageButton
-                android:id="@+id/btn_go_set"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/settings_icn_go"
-                android:scaleType="fitCenter"
-                android:background="@color/main"
-                ></ImageButton>
+                ></View>
+            <EditText
+                android:id="@+id/setNumber"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+
         </LinearLayout>
         // 두번째 줄
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="7"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp"
             android:weightSum="10">
-
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:text="카드 횟수 설정"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* 기본 세트 수는 54세트입니다. \n* 적은 세트 수 부터 시작하는 것을 추천합니다."
                 android:textColor="@color/gray"
-                android:gravity="center_vertical"
-                android:textSize="18dp"
-                ></TextView>
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="20dp"></TextView>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                ></View>
 
-            <ImageButton
-                android:id="@+id/btn_go_card_num"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/settings_icn_go"
-                android:scaleType="fitCenter"
-                android:background="@color/main"
 
-                ></ImageButton>
         </LinearLayout>
         //세번째 줄
         <LinearLayout
@@ -140,32 +130,22 @@
             android:paddingHorizontal="20dp"
             android:weightSum="10">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:text="운동 종목 설정"
-                android:textColor="@color/gray"
-                android:gravity="center_vertical"
-                android:textSize="18dp"
-                ></TextView>
-
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 ></View>
 
-            <ImageButton
-                android:id="@+id/btn_go_card_type"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/setApply"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/settings_icn_go"
-                android:scaleType="fitCenter"
-                android:background="@color/main"
+                android:layout_height="66dp"
+                android:layout_weight="4"
+                android:background="@drawable/how_background"
+                android:text="적용하기"
+                android:textColor="@color/setting_white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
 
-                ></ImageButton>
         </LinearLayout>
     </LinearLayout>
 
@@ -174,15 +154,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.5"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/app_version"
-            android:textSize="14dp"
-            android:textColor="#5E5D5D"
-            android:layout_marginLeft="20dp"
-            ></TextView>
-
     </LinearLayout>
 
 </LinearLayout>

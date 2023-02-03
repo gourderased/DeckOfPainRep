@@ -15,6 +15,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private ImageButton btn_go_set;
     private ImageButton btn_go_card_num;
+    private ImageButton btn_go_card_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         btn_go_set = findViewById(R.id.btn_go_set);
         btn_go_card_num = findViewById(R.id.btn_go_card_num);
+        btn_go_card_type = findViewById(R.id.btn_go_card_type);
 
         btn_go_set.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,14 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingsActivity.this, SettingsCountActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_go_card_type.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this, SettingsTypeActivity.class);
                 startActivity(intent);
             }
         });

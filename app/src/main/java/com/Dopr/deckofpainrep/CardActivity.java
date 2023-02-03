@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
@@ -23,11 +24,7 @@ public class CardActivity extends AppCompatActivity {
     private ImageButton btn_card;
     private ImageButton btn_reset;
     private TextView txt_count;
-    private TextView txt_totalTime;
-    private TextView txt_end;
     private TextView txt_info;
-
-    private int flag = 0;
 
     private long backBtnTime = 0; // 뒤로가기
 
@@ -129,6 +126,11 @@ public class CardActivity extends AppCompatActivity {
         int kCardCount = sharedPreference.getKCardCount();
         int jokerCardCount = sharedPreference.getJokerCardCount();
 
+        String heartCardType = sharedPreference.getHeartType();
+        String diamondCardType = sharedPreference.getDiamondType();
+        String spadeCardType = sharedPreference.getSpadeType();
+        String cloverCardType = sharedPreference.getCloverType();
+
         //총 시간 계산
         long startTime = System.currentTimeMillis();
 
@@ -140,9 +142,8 @@ public class CardActivity extends AppCompatActivity {
         btn_reset = findViewById(R.id.btn_reset);
         txt_count = findViewById(R.id.txt_count);
         txt_count.setText(count + " / " + setNum);
-        txt_totalTime = findViewById(R.id.txt_totalTime);
-        txt_end = findViewById(R.id.txt_end);
         txt_info = findViewById(R.id.txt_info);
+
 
        // 리셋 버튼
         btn_reset.setOnClickListener(new View.OnClickListener() {
@@ -166,10 +167,10 @@ public class CardActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(count < setNum) {
-                    //카드 뽑힌 후 문양과 수 확인 변수 초기화
-                    int patternNum;
+                    //카드 뽑힌 후 문양과 수 확인 변수 초기화;
                     int alphaNum;
                     String pattern;
+                    String type;
                     int executeNum;
 
                     //안뽑힌 카드가 나올 때 까지 반복
@@ -201,24 +202,24 @@ public class CardActivity extends AppCompatActivity {
                             else {
                                 executeNum = alphaNum + 2;
                             }
-//                            // i로 부터 문양 구분
-//                            patternNum = distinguishPattern(i);
-//
-//                            if(patternNum == 1) {
-//                                pattern = diamondCard;
-//                            }
-//                            else if(patternNum == 2) {
-//                                pattern = heartCard;
-//                            }
-//                            else if (patternNum == 3) {
-//                                pattern = spadeCard;
-//                            }
-//                            else if(patternNum == 4) {
-//                                pattern = cloverCard;
-//                            }
-//                            else {
-//                                pattern = "";
-//                            }
+                            // i로 부터 문양 구분
+                            pattern = distinguishPattern(i);
+
+                            if(pattern == "DIAMOND") {
+                                type = diamondCardType;
+                            }
+                            else if(pattern == "HEART") {
+                                type = heartCardType;
+                            }
+                            else if (pattern == "SPADE") {
+                                type = spadeCardType;
+                            }
+                            else if(pattern == "CLOVER") {
+                                type = cloverCardType;
+                            }
+                            else {
+                                type = "";
+                            }
 
                             break;
                         }
@@ -227,37 +228,22 @@ public class CardActivity extends AppCompatActivity {
                     txt_count.setText(count + " / " + setNum);
                     //카드 하단 운동 종류와 횟수 표시
 
-                    txt_info.setText(executeNum +" 회");
+                    txt_info.setText(type + "  " + executeNum +" 회");
                     
                 }
-                // 카드 다 뽑은 후 총 소요시간 표시 & 카드화면 reset버튼 전환
+                // 카드 다 뽑은 후  카드화면 전환
                 else {
                     long curTime = System.currentTimeMillis();
                     int time = (int) (curTime - startTime) /1000;
                     int sec = time % 60;
                     int min = time/ 60 % 60;
 
+                    Intent intent = new Intent(CardActivity.this, CardEndActivity.class);
+                    intent.putExtra("sec", sec);
+                    intent.putExtra("min", min);
+                    startActivity(intent);
 
-                    btn_card.setImageResource(R.drawable.card_end);
 
-                    txt_end.setText("운동 끝!");
-                    if(flag == 0) {
-                        txt_totalTime.setText("총 수행 시간 : " + min + "분 "+ sec + "초");
-                        flag = 1;
-                    }
-                    btn_reset.setImageResource(R.drawable.card_btn_home);
-
-                    btn_reset.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(CardActivity.this, MainActivity.class);
-
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                            startActivity(intent);
-                        }
-                    });
                 }
             }
         });
@@ -300,21 +286,21 @@ public class CardActivity extends AppCompatActivity {
         }
     }
 
-    public int distinguishPattern(int i) {
-        if(i >= 39 && i <=51) {
-            return 4;
+    public String distinguishPattern(int i) {
+        if(i >= 39 && i <=51) { // 클로보
+            return "CLOVER";
         }
-        else if(i >=26 && i <= 38) {
-            return 3;
+        else if(i >=26 && i <= 38) { // 스페이드
+            return "SPADE";
         }
-        else if(i >=13 && i <= 25) {
-            return 2;
+        else if(i >=13 && i <= 25) { // 하트
+            return "HEART";
         }
-        else if(i <= 12) {
-            return 1;
+        else if(i <= 12) { // 다이아
+            return "DIAMOND";
         }
         else { // joker
-            return 0;
+            return "JOKER";
         }
     }
 }

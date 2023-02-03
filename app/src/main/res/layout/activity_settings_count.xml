@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.Dopr.deckofpainrep.SettingsCountActivity"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:weightSum="10"
+    android:orientation="vertical"
+    >
+
+    //상단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:weightSum="10"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            ></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="3"
+            android:text="카드별 횟수 설정"
+            android:textColor="@color/gray"
+            android:textSize="18dp"
+            ></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/gray"
+            android:layout_weight="0.2"
+            android:layout_marginHorizontal="20dp"
+            ></View>
+    </LinearLayout>
+
+    //중단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        // 첫번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="A 카드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_a_card"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+        </LinearLayout>
+        // 두번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="J 카드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_j_card"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+        </LinearLayout>
+        // 세번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="Q 카드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_q_card"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+        </LinearLayout>
+        // 네번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="K 카드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_k_card"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+        </LinearLayout>
+        // 다섯번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="조커 카드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_joker_card"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="number"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                ></View>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_set_apply"
+                android:layout_width="0dp"
+                android:layout_height="66dp"
+                android:layout_weight="4"
+                android:background="@drawable/how_background"
+                android:text="적용하기"
+                android:textColor="@color/setting_white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

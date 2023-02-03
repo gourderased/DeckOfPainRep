@@ -4,22 +4,13 @@
     <string name="logo_name">DeckOfPain</string>
     <string name="main_name">Deck Of Pain Rep</string>
     <string name="how_title">운동 방법</string>
-    <string name="how_content_one">
-        고통의 카드팩이란 54장의 카드를 뽑아
-        \n나오는 카드의 숫자만큼 반복 횟수를 진행하시면 됩니다.
-        \n먼저 4가지 문양을 스쿼트와 런지로 나누어주세요.
-        \nex) 하트, 다이아 - 스쿼트
-        \n\t\t클로버 - 왼쪽 런지
-        \n\t\t스페이드 - 오른쪽 런지
+    <string name="how_content">
+            "고통의 카드팩은 54장의 포커 카드를 이용한 운동 방법입니다.
+2부터 10까지의 카드는 숫자 그대로의 반복횟수,  J Q K 조커 카드는 10회, A카드는 11회가 됩니다.\n
+카드의 문양은 하트, 클로버, 다이아, 스페이드로 이루어져 있고 문양별
+임의대로 스쿼트와 런지를 지정해 수행하면 됩니다.\n
+설정에서 총 세트수, 카드별 횟수, 운동 종목 설정이 가능합니다.
+        "
     </string>
-    <string name="how_content_two">
-        기본 설정은 조커, K, Q, J를 10으로, A는 11로 되어있습니다.
-        \n 설정에서 조정 가능합니다.
-        \n 총
-    </string>
-    <string name="how_content_three">
-
-    </string>
-    <string name="includeJoker">/54</string>
     <string name="app_version">앱 버전 1.3.0</string>
 </resources>

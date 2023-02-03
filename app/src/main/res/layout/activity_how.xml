@@ -28,11 +28,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:text="@string/how_content_one"
+        android:text="@string/how_content"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:textColor="@color/text_main"
-        android:textSize="20dp"></TextView>
+        android:textSize="18dp"></TextView>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.Dopr.deckofpainrep.SettingsTypeActivity"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:weightSum="10"
+    android:orientation="vertical"
+    >
+
+    //상단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:weightSum="10"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            ></View>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="3"
+            android:text="문양별 운동 설정"
+            android:textColor="@color/gray"
+            android:textSize="18dp"
+            ></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/gray"
+            android:layout_weight="0.2"
+            android:layout_marginHorizontal="20dp"
+            ></View>
+    </LinearLayout>
+
+    //중단
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        // 첫번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="하트"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_type_heart"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="text"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="6"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+                />
+        </LinearLayout>
+        // 두번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="다이아"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+            <EditText
+                android:id="@+id/et_type_diamond"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:inputType="text"
+                android:background="@color/gray"
+                android:textColorHint="@color/main"
+                android:maxLength="6"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:enabled="true"
+
+                />
+        </LinearLayout>
+        // 세번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="클로버"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+
+            <EditText
+                android:id="@+id/et_type_clover"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:background="@color/gray"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="text"
+                android:maxLength="6"
+                android:textAlignment="center"
+                android:textColorHint="@color/main"
+
+                />
+        </LinearLayout>
+        // 네번째 줄
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="스페이드"
+                android:textColor="@color/setting_white"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+
+                ></TextView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                ></View>
+
+            <EditText
+                android:id="@+id/et_type_spade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:background="@color/gray"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="text"
+                android:maxLength="6"
+                android:textAlignment="center"
+                android:textColorHint="@color/main"
+
+                />
+        </LinearLayout>
+        // 다섯번째 줄
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:weightSum="10">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                ></View>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_type_apply"
+                android:layout_width="0dp"
+                android:layout_height="66dp"
+                android:layout_weight="4"
+                android:background="@drawable/how_background"
+                android:text="적용하기"
+                android:textColor="@color/setting_white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
