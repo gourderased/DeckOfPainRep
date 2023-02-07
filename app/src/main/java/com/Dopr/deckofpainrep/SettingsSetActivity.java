@@ -22,7 +22,7 @@ public class SettingsSetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings_set);
 
         et_set = findViewById(R.id.setNumber);
-        btn_set_apply = findViewById(R.id.setApply);
+        btn_set_apply = findViewById(R.id.btn_set_apply);
         mToast = Toast.makeText(this, "null", Toast.LENGTH_SHORT);
 
 

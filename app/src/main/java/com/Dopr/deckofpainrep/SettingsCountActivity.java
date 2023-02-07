@@ -13,7 +13,7 @@ import com.example.deckofpainrep.R;
 
 public class SettingsCountActivity extends AppCompatActivity {
 
-    private Button btnSetApply;
+    private Button btnCountApply;
     private EditText etACard;
     private EditText etJCard;
     private EditText etQCard;
@@ -27,7 +27,7 @@ public class SettingsCountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_count);
 
-        btnSetApply = findViewById(R.id.btn_set_apply);
+        btnCountApply = findViewById(R.id.btn_count_apply);
         etACard = findViewById(R.id.et_a_card);
         etJCard = findViewById(R.id.et_j_card);
         etQCard = findViewById(R.id.et_q_card);
@@ -51,7 +51,7 @@ public class SettingsCountActivity extends AppCompatActivity {
         etJokerCard.setText(String.valueOf(sharedPreference.getJokerCardCount()));
 
         //적용하기
-        btnSetApply.setOnClickListener(new View.OnClickListener() {
+        btnCountApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int aCardCount = Integer.parseInt(etACard.getText().toString());

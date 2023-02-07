@@ -247,15 +247,25 @@
                 android:layout_weight="3"
                 ></View>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_type_apply"
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="66dp"
+                android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="@drawable/how_background"
-                android:text="적용하기"
-                android:textColor="@color/setting_white"
-                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+                android:weightSum="10"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_type_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/how_background"
+                    android:text="적용하기"
+                    android:textColor="@color/setting_white"
+                    android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

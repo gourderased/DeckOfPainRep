@@ -178,9 +178,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/app_version"
-            android:textSize="14dp"
+            android:textSize="12dp"
             android:textColor="#5E5D5D"
             android:layout_marginLeft="20dp"
+            android:gravity="center"
             ></TextView>
 
     </LinearLayout>
